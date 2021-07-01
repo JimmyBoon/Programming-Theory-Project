@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Color chosenColor;
     [SerializeField] string playerName;
 
+    //Encapsulation
     public Color SelectedColor
     {
         get { return chosenColor; }
@@ -26,7 +27,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(FindObjectsOfType<GameManager>().Length > 1)
+        if (FindObjectsOfType<GameManager>().Length > 1)
         {
             Destroy(gameObject);
         }
@@ -36,11 +37,26 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void EnterName(string inputText)
+    //Encapsulation with error checking
+    public string PlayerName
     {
-        playerName = inputText;
-        Debug.Log(playerName);
-        SceneManager.LoadScene(1);
+        set
+        {
+            if (!string.IsNullOrWhiteSpace(value))
+            {
+                playerName = value;
+                SceneManager.LoadScene(1);
+            }
+            else
+            {
+                Debug.Log("Enter name");
+            }
+
+        }
+        get
+        {
+            return playerName;
+        }
     }
 
 }
