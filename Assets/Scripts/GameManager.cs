@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] Color chosenColor;
+    [SerializeField] string playerName;
 
-    [SerializeField] public Color SelectedColor
+    public Color SelectedColor
     {
         get { return chosenColor; }
         set
@@ -20,7 +22,6 @@ public class GameManager : MonoBehaviour
                 Debug.Log("What happened???");
             }
         }
-
     }
 
     private void Awake()
@@ -35,5 +36,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void EnterName(string inputText)
+    {
+        playerName = inputText;
+        Debug.Log(playerName);
+        SceneManager.LoadScene(1);
+    }
 
 }
