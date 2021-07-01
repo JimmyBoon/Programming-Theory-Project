@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cube : Shape
 {
-    //Inheritance
+    //Polymorhism
     protected override void DisplayText()
     {
         Debug.Log($"I am the greatest {gameObject.name}");
