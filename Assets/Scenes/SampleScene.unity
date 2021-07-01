@@ -1033,9 +1033,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1450413628}
-        m_TargetAssemblyTypeName: ButtonControl, Assembly-CSharp
-        m_MethodName: SetSelectedColor
+      - m_Target: {fileID: 1450413627}
+        m_TargetAssemblyTypeName: BlackButton, Assembly-CSharp
+        m_MethodName: DestroyAll
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
